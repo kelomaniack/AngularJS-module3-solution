@@ -9,7 +9,7 @@
 
   function FoundItems() {
     var ddo = {
-      templateUrl: 'items.thtml',
+      templateUrl: 'items.html',
       scope: {
         items: '<',
         onRemove: '&'
@@ -61,6 +61,7 @@
         // process result and only keep items that match
         var items = result.data.menu_items;
         var foundItems = []
+        // loop over the items and find the ones that match the searchTerm and push them to the foundItems array
         for (var index = 0; index < items.length; index++) {
           if (items[index].description.indexOf(searchTerm) != -1) {
             foundItems.push(items[index]);
